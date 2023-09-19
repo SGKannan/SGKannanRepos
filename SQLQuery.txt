@@ -1,0 +1,15 @@
+select e.Emp_Id,j.Joining_Date from Employee e 
+inner join Joining j on e.Emp_ID=j.Emp_ID
+
+select Emp_Id,Last_Name,First_Name from Employee
+Union All
+select Emp_Id,Last_Name,First_Name  from Joining
+
+select Emp_Id,Last_Name,First_Name from Employee
+Union 
+select Emp_Id,Last_Name,First_Name  from Joining
+
+
+select top 1 Salary as SecondHighestSalary from (
+select top 2 Salary from Employee order by Salary desc) as T
+order by Salary ASC
